@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main (){ 
+
+	setlocale(LC_ALL,"Portuguese"); 
+
+	float imc, peso, alt, alt2; // VARIÁVEIS
+	
+	printf("Digite as seguintes informações que vamos calcular seu IMC\n"); 
+	printf("Peso:"); 
+	scanf("%f", &peso); 
+	printf("\nAltura:"); 
+	scanf("%f", &alt); 
+
+	imc = peso / (alt * alt); // CÁLCULO IMC
+
+	if(imc<16){ 								//PRINTA NA TELA O RESULTADO E A CLASSIFICAÇÃO
+	printf("%.2f Baixo peso muito grave", imc); 
+	} 
+	else if(imc>=16 && imc<=16.99){ 
+	printf("%.2f Baixo peso grave", imc); 
+	}		 
+	else if(imc>=17 && imc<=18.49){ 
+	printf("%.2f Baixo peso", imc); 
+	} 
+	else if(imc>=18.5 && imc<=24.99){ 
+	printf("%.2f Peso normal", imc); 
+	} 
+	else if(imc>=25 && imc<=29.99){ 
+	printf("%.2f Sobrepeso", imc); 
+	} 
+	else if(imc>=30 && imc<=34.99){ 
+	printf("%.2f Obesidade grau I", imc); 
+	} 
+ 	else if(imc>=35 && imc<=39.99){ 
+	printf("%.2f Obesidade grau II", imc); 
+	} 
+	else{ 
+	printf("%.2f Obesidade grau III (obesidade mórbida)", imc); 
+	} 
+	
+} 
