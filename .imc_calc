@@ -1,21 +1,28 @@
 #include <stdio.h>
 #include <locale.h>
+#include <math.h>
 
 int main (){ 
 
 	setlocale(LC_ALL,"Portuguese"); 
 
-	float imc, peso, alt, alt2; // VARIÁVEIS
+	float imc, peso, alt, alt2;		 // VARIÁVEIS
 	
 	printf("Digite as seguintes informações que vamos calcular seu IMC\n"); 
-	printf("Peso:"); 
+	printf("Peso:\n"); 
 	scanf("%f", &peso); 
-	printf("\nAltura:"); 
+	printf("Altura:\n"); 
 	scanf("%f", &alt); 
 
-	imc = peso / (alt * alt); // CÁLCULO IMC
+	imc = peso / pow (alt, 2); // CÁLCULO IMC
 
-	if(imc<16){ 								//PRINTA NA TELA O RESULTADO E A CLASSIFICAÇÃO
+	if(peso==0){
+		printf("COMANDO INVÁLIDO");
+	}
+	else if(alt==0){
+		printf("COMANDO INVÁLIDO");
+	}
+	else if(imc<16){ 			  //PRINTA NA TELA O RESULTADO E A CLASSIFICAÇÃO
 	printf("%.2f Baixo peso muito grave", imc); 
 	} 
 	else if(imc>=16 && imc<=16.99){ 
